@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Arabic Academy Bangladesh</title>
+<link rel="icon" type="image/png" href="./photo/logo.jpg">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #0a3d62, #1e3799);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Signup Box */
+.signup-box{
+    background:white;
+    padding:30px;
+    width:100%;
+    max-width:420px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.signup-box h2{
+    text-align:center;
+    color:#0a3d62;
+    margin-bottom:20px;
+}
+
+/* Input */
+.signup-box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+/* Button */
+.signup-box button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    background:#1e3799;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.signup-box button:hover{
+    background:#0a3d62;
+}
+
+/* Link */
+.signup-box p{
+    text-align:center;
+    margin-top:15px;
+}
+
+.signup-box a{
+    color:#1e3799;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Responsive */
+@media(max-width:500px){
+    body{
+        padding:15px;
+        height:auto;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="signup-box">
+    <h2>Create Account</h2>
+    <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Mobile Number" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account?  
+        <a href="login.html">Login</a>
+    </p>
+</div>
+
+</body>
+</html>
