@@ -1,289 +1,210 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    background-image: linear-gradient(180deg, #09efff 50%, #efdc327e 80%);
-    color: #333;
-    line-height: 1.6; 
+  font-family: 'Segoe UI', sans-serif;
+  background: rgb(0, 0, 0);
 }
-
-/* Header */
-header{
-  background: #0a3d62;
-  padding: 0;
+/*navbar*/
+.nav-pills .nav-link {
+  font-weight: 600;
+  color: #4f46e5;
 }
-
-/* Container */
-.container{
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+.navbar .btn {
+  margin-left: 10px;
 }
-
-/* Header Wrap */
-.header-wrap{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-pills .nav-link.active {
+  background-color: #4f46e5;
+  color: rgb(117, 233, 16);
 }
-
-/* Logo */
-.logo{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.logo img{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-/* Navbar */
-nav ul{
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  border: 2px solid rgba(255, 255, 255, 0.669);
-  border-radius: 10px;
-  padding: 10px 15px;
-}
-
-nav ul li a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 26px;
-  transition: 0.3s;
-}
-
-nav ul li a:hover{
-  color: #fbc531;
-  transition: 0,5s;
-}
-
-/* Buttons */
-.header-btn input{
-  padding: 8px 15px;
-  border: none;
-  background: #fbc531;
-  color: #000;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 8px;
-  transition: 0.3s;
-}
-
-.header-btn input:hover{
-  background: #fff;
-}
-
-/** Hero Section **/
+/* hero Section*/
 .hero {
-     width:100%;
-    overflow:hidden;
+  min-height: 90vh;
+  background-image: url('https://images.unsplash.com/photo-1633158829875-e5316a358c6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 70vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+
+}
+.costom-css{
+  background:#c4e06e;
+  color: #060606;
+  font-family: cursive;
+}
+/* login modal*/
+.modal-content {
+  border-radius: 12px;
 }
 
-.hero img{
-    width:100%;
-    height:auto;
-    display:block;
-    height:100vh;
-    object-fit:cover;
-}
-/** Objective Section **/
-.Objective{
-    display: flex;
-    padding: 40px 20px;
-    text-align: center;
+.modal-lg {
+  max-width: 800px;
 }
 
-.Objective-head, h2 {
-    
-    display: block;
-    font-size: 28px;
-    background-image: linear-gradient(to top, #d8f22f 0%, #065bf0 100%);
-    padding: 10px 0;
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
-}
-.Objective-img img {
-   width: 600px;
-   height: 500px;
-   object-fit: cover;
-}
-.Objective-text h2 { 
-    font-size: 48px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #0d00ff, #ff9900, #ff3700, #d400ff, #fff200);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
+/*Startup Ideas*/
+.idea-cards {
+  background: #ffffff;
+  padding: 40px 0;
 }
 
-.Objective-text p{
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-    text-align: center;
-    padding: 20px;
-}
-.Objective-img h3 {
-    font-size: 28px;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 28px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    background: linear-gradient(90deg, #0d00ff, #e100ff, #0ef0dd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.Objective-img p {
-    font-size: 18px;
-    color: #333;
-    text-align: center;
-}
-                    ** Students Section **/
-div h2 {
-    font-size: 28px;
-    background-image: linear-gradient(to top, #f22f7a 0%, #065bf0 100%);
-}
-div {
-    display: block;
-    padding: 20px 0;
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
+.idea-cards h2 {
+  font-weight: 700;
 }
 
-.Students {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-    align-items: center;
+.idea-cards .card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.student-card img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    align-items: center;
+.idea-cards .btn-primary {
+  background-color: #4f46e5;
+  border: none;
 }
-.student-card {
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgb(0, 0, 0);
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    height: auto;
-    margin: 20px;
-    object-fit: cover;
+
+.idea-cards .btn-primary:hover {
+  background-color: #3b36d0;
 }
-.student-card h3 {
-    font-size: 28px;
-    padding: 10px 0;
-    color: #f40606;
-    text-align: center;
-    margin: 0;
+
+.modal-content {
+  border-radius: 12px;
 }
-.student-card p {
-    font-size: 18px;
-    color: #333;
-    margin-top: 10px;
+
+.modal-lg {
+  max-width: 500px;
 }
- .student-card img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    align-items: center;
+
+.idea-cards .btn-primary {
+  background-color: #4f46e5;
+  border: none;
 }
-             /* Admission Section */
-.Admission {
-    display: flex;
-    padding: 40px 20px;
-    text-align: center;
+
+.idea-cards .btn-primary:hover {
+  background-color: #3b36d0;
 }
-.admition-text h2{
-    font-size: 28px;
-    background-image: linear-gradient(to top, #e92efa 0%, #06f0f0 100%);
-    padding: 10px 0;
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
+
+.card-img-top {
+  height: 180px; 
+  object-fit: cover; 
 }
-.admition-text p{
-    flex: 1;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-    text-align: left;
-    text-align: center;
-    padding: 20px;
+
+/*How it Works Section*/
+.how-it-works {
+  background-color: #f8f9fa;
 }
-.admition-text a {
-    text-decoration: none;
-    color: #2e7bd3;     
-    font-size: 20px;
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 2px solid black;
+
+.how-it-works h2 {
+  font-weight: 700;
 }
-.admition-video video {
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
 }
-        /* contact Section */
-.contact{
-    display: flex;
-    padding: 40px 20px;
-    text-align: center;
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.contact-text p{
-    flex: 1;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-    text-align: center;
-    text-align: center;
-    padding: 20px;
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #4f46e5;
 }
-.contact-text a {
-    text-decoration: none;
-    color: #2e7bd3;     
-    font-size: 20px;
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 2px solid black;
+
+/* What Our Users Say*/
+.testimonials {
+  background-color: #ffffff;
+  padding: 60px 0;
 }
-.contact-text a:hover {
-    background: #132324bd;
-    transition: 0.7s;
-    padding: 8px 12px;
-    color: azure;
-    border-radius: 20px;
+
+.testimonials h2 {
+  font-weight: 700;
 }
-          /* Footer Section */
-footer {
-    background-color: #1c1c1b;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}          
+
+.testimonials .card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .card img {
+  object-fit: cover;
+}
+
+.testimonials .card img {
+  display: block; /* ensure block level */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Why Choose Our Platform*/
+.features {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.features h2 {
+  font-weight: 700;
+}
+
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #4f46e5;
+}
+/* Call To Action Section */
+.cta-section {
+  background-color: #4f46e5;
+  padding: 80px 0;
+}
+
+.cta-section h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+}
+
+.cta-section .btn {
+  min-width: 180px;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-section .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+/*Footer Section*/
+.footer a:hover {
+  text-decoration: underline;
+  color: #06b6d4;
+}
+
+.footer .social-icons a:hover {
+  color: #06b6d4;
+}
+
+.footer hr {
+  border-top: 1px solid #555;
+}

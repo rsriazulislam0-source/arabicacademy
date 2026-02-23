@@ -1,140 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabic Academi Bangladesh</title>
-    <link rel="icon" type="image/png" href="./photo/logo.jpg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="Responsive.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FundBridge</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-   <header>
-  <div class="container header-wrap">
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar navbar-expand-lg bg-secondary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">FundBridge</a>
 
-    <div class="logo">
-      <img src="./photo/logo.jpg" alt="Logo">
-      Arabic Academi Bangladesh
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Investors</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Startups</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">How it Works</a></li>
+        </ul>
+
+        <div class="d-flex">
+          <button class="btn btn-outline-success ms-2 costom-css" data-bs-toggle="modal" data-bs-target="#investmentModal">
+            Invest Now
+          </button>
+          <button class="btn btn-outline-success ms-2 bg-danger text-white" data-bs-toggle="modal" data-bs-target="#ideaModal">
+            Submit Idea
+          </button>
+          <button class="btn btn-outline-primary me-2 bg-dark text-white" data-bs-toggle="modal" data-bs-target="#authModal">Login</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">Sign Up</button>
+        </div>
+      </div>
     </div>
+  </nav>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="admission.html">Admition</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- ===== Hero Section ===== -->
+  <section class="hero d-flex align-items-center text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Connect Investors with Startup Ideas</h1>
+      <p class="lead">Bangladesh's first investment connect platform</p>
 
-    <div class="header-btn">
-    <a href="login.html"><input type="button"  value="Login"></a>
-    <a href="signup.html"><input type="button" value="Sign Up"></a>
+      <button class="btn btn-light btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#authModal">
+        Get Started
+      </button>
     </div>
+  </section>
 
+  <!-- ===== Login & Signup Modal ===== -->
+  <div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+
+        <!-- Tabs -->
+        <ul class="nav nav-pills nav-justified mb-3">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#loginTab">Login</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#signupTab">Sign Up</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+          <!-- Login -->
+          <div class="tab-pane fade show active" id="loginTab">
+            <h5 class="text-center mb-3">Welcome Back</h5>
+
+            <form>
+              <div class="mb-2">
+                <label>Email</label>
+                <input type="email" class="form-control" required>
+              </div>
+
+              <div class="mb-2">
+                <label>Password</label>
+                <input type="password" class="form-control" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+          </div>
+
+          <!-- Signup -->
+          <div class="tab-pane fade" id="signupTab">
+            <h5 class="text-center mb-3">Create Account</h5>
+
+            <form>
+
+              <div class="mb-2">
+                <label>Full Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+
+              <div class="mb-2">
+                <label>Email</label>
+                <input type="email" class="form-control" required>
+              </div>
+
+              <div class="mb-2">
+                <label>Phone</label>
+                <input type="tel" class="form-control" placeholder="01XXXXXXXXX" required>
+              </div>
+
+              <div class="mb-2">
+                <label>Password</label>
+                <input type="password" class="form-control" required>
+              </div>
+
+              <div class="mb-2">
+                <label>I am a:</label>
+                <select class="form-select" required>
+                  <option value="">Select role</option>
+                  <option>Investor</option>
+                  <option>Startup / Idea Holder</option>
+                </select>
+              </div>
+
+              <hr>
+
+              <h6>KYC Verification</h6>
+
+              <div class="mb-2">
+                <label>NID Number</label>
+                <input type="text" class="form-control">
+              </div>
+
+              <div class="mb-2">
+                <label>Passport Number (Optional)</label>
+                <input type="text" class="form-control">
+              </div>
+
+              <button type="submit" class="btn btn-success w-100 mt-2">Sign Up</button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </div>
-</header>
+
+  <!-- Idea Submit Modal -->
+  <div class="modal fade" id="ideaModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content p-4">
+
+        <h5 class="text-center mb-3">Submit Your Startup Idea</h5>
+
+        <form>
+
+          <div class="mb-3">
+            <label>Startup Name</label>
+            <input type="text" class="form-control" placeholder="Enter startup name" required>
+          </div>
+
+          <div class="mb-3">
+            <label>Funding Amount (BDT)</label>
+            <input type="number" class="form-control" placeholder="Enter funding amount" required>
+          </div>
+
+          <div class="mb-3">
+            <label>Equity Offer (%)</label>
+            <input type="number" class="form-control" placeholder="Enter equity percentage" required>
+          </div>
+
+          <div class="mb-3">
+            <label>Category</label>
+            <select class="form-select" required>
+              <option value="">Select Category</option>
+              <option>Tech</option>
+              <option>Health</option>
+              <option>Education</option>
+              <option>E-commerce</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label>Pitch Description</label>
+            <textarea class="form-control" rows="4" placeholder="Describe your idea" required></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label>Upload Pitch Deck (PDF)</label>
+            <input type="file" class="form-control" accept=".pdf" required>
+          </div>
+
+          <button type="submit" class="btn btn-success w-100">Submit Idea</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 
-                          <!-- Hero Section -->
-<main>
-    <section class="hero">
-        <img src="./photo/students.jpg" alt="students">
-    </section>
-                            <!-- Objective Section -->
-    <div class="Objective-head">
-        <h2>এরাবিক একাডেমির লক্ষ্য ও উদ্দেশ্য</h2>
+  <section class="idea-cards py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Startup Ideas</h2>
+
+      <div class="row g-4">
+
+        <!-- Idea Card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1573757056004-065ad36e2cf4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top" alt="Tech Innovators">
+            <div class="card-body">
+              <h5 class="card-title">Tech Innovators</h5>
+              <p class="card-text">An innovative tech solution aiming to revolutionize the industry.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Investment Range:</strong> BDT 5-20 Lacs</li>
+              <li class="list-group-item"><strong>Equity Offer:</strong> 10%</li>
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#investmentModal">Invest
+                Now</button>
+            </div>
+          </div>
         </div>
-    <section class="Objective">
-        <div class="Objective-img">
-            <img src="./photo/Objective-1.jpg" alt="Objective">
-            <h3>মুফতি শাফি আমিন</h3>
-            <p>প্রিন্সিপাল এরাবিক একাডেমি</p>
+
+        <!-- Idea Card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1661506542128-b2ce132ac222?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top" alt="Health Hub">
+            <div class="card-body">
+              <h5 class="card-title">Health Hub</h5>
+              <p class="card-text">Revolutionizing healthcare with cutting-edge technology.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Investment Range:</strong> BDT 10-50 Lacs</li>
+              <li class="list-group-item"><strong>Equity Offer:</strong> 15%</li>
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#investmentModal">Invest
+                Now</button>
+            </div>
+          </div>
         </div>
-        <div class="Objective-text">
-            <h2>প্রিন্সিপালের কিছু কথা</h2>
-            <p>
-                আলহামদুলিল্লাহ, এরাবিক একাডেমী বাংলাদেশ একটি স্বনামধন্য শিক্ষা প্রতিষ্ঠান হিসেবে প্রতিষ্ঠিত হয়েছে। আমাদের প্রধান লক্ষ্য হল 
-                শিক্ষার্থীদের আরবি ভাষা ও ইসলামী জ্ঞানে দক্ষতা অর্জনে সহায়তা করা। আমরা বিশ্বাস করি যে, একটি সুসংগঠিত ও আধুনিক শিক্ষাব্যবস্থা 
-                শিক্ষার্থীদের ভবিষ্যৎ গড়ার ক্ষেত্রে গুরুত্বপূর্ণ ভূমিকা পালন করে। আমাদের শিক্ষকগণ অত্যন্ত যোগ্য এবং অভিজ্ঞ, যারা শিক্ষার্থীদের সর্বোচ্চ
-                মানের শিক্ষা প্রদান নিশ্চিত করেন। আমরা আমাদের শিক্ষার্থীদের নৈতিক ও সামাজিক মূল্যবোধ উন্নয়নে গুরুত্ব দিয়ে থাকি, যাতে তারা সমাজে 
-                একজন দায়িত্বশীল নাগরিক হিসেবে গড়ে উঠতে পারে।
-                একজন মাদ্রাসার প্রিন্সিপাল বা বড় হুজুর হিসেবে, আমর লক্ষ্য হল শিক্ষার্থীদের শুধু একাডেমিক জ্ঞানে নয়, বরং তাদের চরিত্র ও নৈতিক 
-                মূল্যবোধেও উন্নতি ঘটানো। আমরা প্রত্যেক শিক্ষার্থীকে একজন আদর্শ মুসলিম ও সমাজের কল্যাণকামী সদস্য হিসেবে গড়ে তোলার জন্য প্রতিশ্রুতিবদ্ধ।
-                আমাদের একাডেমীতে, আমরা শিক্ষার্থীদের প্রতি মানুষের প্রতি ভালোবাসা, সহানুভূতি ও সহযোগিতার মূল্যবোধ শেখানোর প্রতি বিশেষ গুরুত্ব দিই।
-                এরাবিক বাংলাদেশে আপনাদের স্বাগতম জানাই এবং আশা করি আমাদের সাথে আপনার শিক্ষা যাত্রা সফল ও সমৃদ্ধ হবে।
-            </p>
+
+        <!-- Idea Card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="EduFuture">
+            <div class="card-body">
+              <h5 class="card-title">EduFuture</h5>
+              <p class="card-text">Innovative educational platform for the digital age.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Investment Range:</strong> BDT 8-30 Lacs</li>
+              <li class="list-group-item"><strong>Equity Offer:</strong> 12%</li>
+            </ul>
+            <div class="card-body">
+              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#investmentModal">Invest
+                Now</button>
+            </div>
+          </div>
         </div>
-    </section>
-                            <!-- Students Section -->
-      <div><h2>আমাদের কিছু শিক্ষার্থী</h2></div>
-   <section class="Students">
-        <div class="student-card">
-            <img src="./photo/students-1.jpg" alt="Student 1">
-            <h3>রায়হান ইসলাম</h3>
-            <p>২য় শ্রেণী</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Modal -->
+  <div class="modal fade" id="investmentModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4">
+
+        <h5 class="text-center mb-3">Invest in Startup</h5>
+
+        <form>
+
+          <div class="mb-3">
+            <label for="investmentAmount" class="form-label">Investment Amount (BDT)</label>
+            <input type="number" class="form-control" id="investmentAmount" placeholder="Enter amount" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="investmentDuration" class="form-label">Investment Duration (Months)</label>
+            <input type="number" class="form-control" id="investmentDuration" placeholder="Enter duration" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="additionalNotes" class="form-label">Additional Notes</label>
+            <textarea class="form-control" id="additionalNotes" rows="3"
+              placeholder="Any additional comments"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-success w-100">Submit Investment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--How it Works Section-->
+  <section class="how-it-works py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">How It Works</h2>
+
+      <div class="row text-center g-4">
+
+        <!-- Step 1 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-lightbulb-fill"></i>
+            </div>
+            <h5 class="mb-2">Submit Your Idea</h5>
+            <p>Fill out your startup idea in our simple form and submit for review.</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-2.jpg" alt="Student 2">
-            <h3>মাসুদ ইসলাম</h3>
-            <p>১ম শ্রেণী</p>
+
+        <!-- Step 2 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h5 class="mb-2">Investors Review</h5>
+            <p>Verified investors review your idea and provide funding options.</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-3.jpg" alt="Student 3">
-            <h3>রফিকুল ইসলাম</h3>
-            <p>প্লে সেকশন</p>
+
+        <!-- Step 3 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-bar-chart-fill"></i>
+            </div>
+            <h5 class="mb-2">Track Progress</h5>
+            <p>Monitor the funding and growth of your startup in real-time.</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-4.jpg" alt="Student 4">
-            <h3>ফাতেমা খাতুন</h3>
-            <p>বৃত্তি পরীক্ষার্থী</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!--What Our Users Say-->
+  <section class="testimonials py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">What Our Users Say</h2>
+
+      <div class="row g-4">
+
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+          <div class="card p-4 shadow-sm rounded h-100 text-center">
+            <img
+              src="https://images.unsplash.com/photo-1559629819-638a8f0a4303?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="rounded-circle mb-3" alt="User 1" width="80" height="80">
+            <h5>Rahim Khan</h5>
+            <p class="text-muted">"Thanks to this platform, I secured funding for my tech startup within weeks!"</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-5.jpg" alt="Student 1">
-            <h3>মাইমুনা</h3>
-            <p>বৃত্তি পরীক্ষার্থী</p>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+          <div class="card p-4 shadow-sm rounded h-100 text-center">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1668896123808-cd4f065911fe?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="rounded-circle mb-3" alt="User 2" width="80" height="80">
+            <h5>Sara Ahmed</h5>
+            <p class="text-muted">"A fantastic platform connecting innovative startups with investors easily."</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-6.jpg" alt="Student 2">
-            <h3>সাবিনা আক্তার</h3>
-            <p>১ম শ্রেণী</p>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+          <div class="card p-4 shadow-sm rounded h-100 text-center">
+            <img
+              src="https://images.unsplash.com/photo-1554126807-6b10f6f6692a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="rounded-circle mb-3" alt="User 3" width="80" height="80">
+            <h5>Jahid Hasan</h5>
+            <p class="text-muted">"User-friendly and efficient! My startup received attention from top investors."</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-7.jpg" alt="Student 3">
-            <h3>রফিকুল ইসলাম</h3>
-            <p>৩য় শ্রেণী</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!--Why Choose Our Platform-->
+  <section class="features py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Why Choose Our Platform</h2>
+
+      <div class="row g-4 text-center">
+
+        <!-- Feature 1 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <h5 class="mb-2">Secure & Verified</h5>
+            <p>All startups and investors are verified for maximum safety and trust.</p>
+          </div>
         </div>
-        <div class="student-card">
-            <img src="./photo/students-8.jpg" alt="Student 4">
-            <h3>এরাবিক শাখা</h3>
-            <p>নুরানী নাজরা হিফজ</p>
+
+        <!-- Feature 2 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-speedometer2"></i>
+            </div>
+            <h5 class="mb-2">Fast Funding</h5>
+            <p>Get your startup funded quickly through our efficient platform.</p>
+          </div>
         </div>
-   </section>
-                             <!-- Admition Section -->
-   <section class="admition">
-        <div class="admition-text">
-            <h2>এখনই ভর্তি হোন!</h2>
-            <p>আপনার সন্তানের উজ্জ্বল ভবিষ্যতের জন্য আজই এরাবিক একাডেমি বাংলাদেশে ভর্তি করুন। আমাদের একাডেমী আপনাকে আধুনিক ও মানসম্মত শিক্ষা প্রদান করে, যা আপনার সন্তানের ব্যক্তিত্ব ও দক্ষতা উন্নয়নে সহায়ক হবে। আমাদের সাথে যুক্ত হয়ে আপনার সন্তানের শিক্ষাজীবনকে সমৃদ্ধ করুন।</p>
-            <a href="admission.html">অ্যাডমিশন ফর্ম পূরণ করুন</a>
+
+        <!-- Feature 3 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <h5 class="mb-2">Track Progress</h5>
+            <p>Monitor your investments and startup growth in real-time.</p>
+          </div>
         </div>
-        <div class="admition-video">
-            <video src="./videos/admition-exma.mp4" controls></video>
+
+        <!-- Feature 4 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h5 class="mb-2">Expert Guidance</h5>
+            <p>Connect with mentors and advisors to grow your startup smartly.</p>
+          </div>
         </div>
-   </section>
-<div><h2>যোগাযোগ করুন</h2></div>
-   <section class="contact">  
-        <div class="contact-text">
-            <p>আপনার যেকোনো প্রশ্ন বা তথ্যের জন্য আমাদের সাথে যোগাযোগ করতে দ্বিধা করবেন না। আমরা আপনার সাহায্যের জন্য সর্বদা প্রস্তুত। নিচের তথ্য ব্যবহার করে আমাদের সাথে যোগাযোগ করুন অথবা আমাদের অফিসে সরাসরি আসুন।</p>
-            <a href="contact.html">যোগাযোগ ফর্ম পূরণ করুন</a>
+
+        <!-- Feature 5 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <h5 class="mb-2">Global Reach</h5>
+            <p>Expose your startup to investors and partners from around the world.</p>
+          </div>
         </div>
-   </section>
-    </main>
-<footer>
-    © 2026 Arabic Academy Bangladesh | Developed by RS Riaz Amin
-</footer>
-<script src="Script.js"></script>
+
+        <!-- Feature 6 -->
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 shadow-sm rounded">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-phone-fill"></i>
+            </div>
+            <h5 class="mb-2">Easy Dashboard</h5>
+            <p>User-friendly dashboard to manage your startups and investments easily.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--Call To Action Section-->
+  <section class="cta-section py-5 text-center text-white">
+    <div class="container">
+      <h2 class="mb-3">Ready to Launch Your Startup?</h2>
+      <p class="mb-4">Join our platform today and get funded by verified investors in no time!</p>
+
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#signupModal">
+          Sign Up
+        </button>
+        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#ideaSubmitModal">
+          Submit Your Idea
+        </button>
+      </div>
+    </div>
+  </section>
+  <!--footer Section-->
+  <footer class="footer bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+
+        <!-- About -->
+        <div class="col-md-4 mb-4">
+          <h5>About Startup Platform</h5>
+          <p>Connecting innovative startups with verified investors across Bangladesh and beyond. Launch, get funded,
+            and grow your business.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#hero" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#idea-section" class="text-white text-decoration-none">Submit Idea</a></li>
+            <li><a href="#idea-cards" class="text-white text-decoration-none">Startup Ideas</a></li>
+            <li><a href="#how-it-works" class="text-white text-decoration-none">How It Works</a></li>
+            <li><a href="#features-section" class="text-white text-decoration-none">Features</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Social -->
+        <div class="col-md-4 mb-4">
+          <h5>Contact Us</h5>
+          <p>Email: support@startupplatform.com</p>
+          <p>Phone: +880 1234 567890</p>
+          <div class="social-icons mt-3">
+            <a href="#" class="text-white fs-4 me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white fs-4 me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white fs-4 me-3"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="bg-secondary">
+
+      <div class="text-center mt-3">
+        &copy; 2026 Startup Platform. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
